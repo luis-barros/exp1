@@ -7,7 +7,8 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users').default;
+var listRouter = require('./routes/list');
 
 var app = express();
 
