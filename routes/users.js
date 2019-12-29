@@ -12,7 +12,7 @@ router.get('/', function(req, res, next) {
   client.connect(function(err){
     assert.equal(null, err);
     const db = client.db(dbName);
-db.collection('users').find().toArray(function(err,docs){
+    db.collection('users').find().toArray(function(err,docs){
       res.send(docs);
       client.close();
     });
