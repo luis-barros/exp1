@@ -3,11 +3,16 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const MongoClient = require('mongodb').MongoClient;
+const assert = require('assert');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
 var app = express();
+
+const url = 'mongodb://localhost:27017';
+const dbName = 'myproj'
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -39,3 +44,7 @@ app.use(function(err, req, res, next) {
 });
 
 module.exports = app;
+
+app.listen(3000, function(){
+  console.log('listening on 3000')
+});
